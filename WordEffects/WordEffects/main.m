@@ -33,6 +33,8 @@ int main(int argc, const char * argv[]) {
             printf("4. Canadianize\n");
             printf("5. Respond\n");
             printf("6. De-Space-It\n");
+            printf("7. Word Count\n");
+            printf("8. Punctuation Removal\n");
 
             // get user option choice
             fgets(&inputChoice, 10, stdin);
@@ -85,6 +87,46 @@ int main(int argc, const char * argv[]) {
                     NSString *despace = [inputString stringByReplacingOccurrencesOfString:@" " withString:@"-"];
                     NSLog(@"%@", despace);
                     NSLog(@"%p", &despace);
+                    break;
+                }
+                case 7:
+                {
+                    int wordCount = 0;
+                    NSCharacterSet *spaces = [NSCharacterSet whitespaceAndNewlineCharacterSet];
+                    NSScanner *scanner = [NSScanner scannerWithString: inputString];
+                    
+                    while ([scanner scanUpToCharactersFromSet:spaces intoString:nil]) {
+                         wordCount++;
+                    }
+                    
+                    NSLog(@"Number of words: %ld", (long)wordCount);
+                    break;
+                }
+                case 8:
+                {
+                    if ([inputString containsString:@"."])
+                    {
+                        NSString *noPeriod = [inputString stringByReplacingOccurrencesOfString:@"." withString:@""];
+                        NSLog(@"%@", noPeriod);
+                        NSLog(@"%p", &noPeriod);
+                    } else if ([inputString containsString:@","]) {
+                        NSString *noComma = [inputString stringByReplacingOccurrencesOfString:@"," withString:@""];
+                        NSLog(@"%@", noComma);
+                        NSLog(@"%p", &noComma);
+                    } else if ([inputString containsString:@"?"]) {
+                        NSString *noQuestion = [inputString stringByReplacingOccurrencesOfString:@"?" withString:@""];
+                        NSLog(@"%@", noQuestion);
+                        NSLog(@"%p", &noQuestion);
+                    } else if ([inputString containsString:@":"]) {
+                        NSString *noColon = [inputString stringByReplacingOccurrencesOfString:@":" withString:@""];
+                        NSLog(@"%@", noColon);
+                        NSLog(@"%p", &noColon);
+                    } else if ([inputString containsString:@";"]) {
+                        NSString *noSColon = [inputString stringByReplacingOccurrencesOfString:@";" withString:@""];
+                        NSLog(@"%@", noSColon);
+                        NSLog(@"%p", &noSColon);
+                    }
+                    break;
                 }
             }
             
