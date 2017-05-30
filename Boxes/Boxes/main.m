@@ -14,6 +14,8 @@ int main(int argc, const char * argv[]) {
         float boxVolume;
         float boxVolume2;
         float timesFit;
+        
+        
         Box *box1 = [[Box alloc] initWithHeight:20.5 andWidth:32.1 andLength:41.3];
         Box *box2 = [[Box alloc] initWithHeight:50 andWidth:62.2 andLength:74];
         
