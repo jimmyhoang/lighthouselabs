@@ -10,4 +10,15 @@
 
 @implementation AdditionQuestion
 
+-(instancetype)init {
+    if (self = [super init]) {
+        int num1 = arc4random_uniform(100);
+        int num2 = arc4random_uniform(100);
+        
+        _question = [NSString stringWithFormat:@"%d + %d = ?",num1, num2];
+        _answer = num1 + num2;
+    }
+    return self;
+}
+
 @end

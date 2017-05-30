@@ -10,4 +10,7 @@
 
 @interface AdditionQuestion : NSObject
 
+@property (nonatomic) NSString* question;
+@property (nonatomic) NSInteger answer;
+
 @end
