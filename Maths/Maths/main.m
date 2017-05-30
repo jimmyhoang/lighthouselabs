@@ -9,14 +9,19 @@
 #import <Foundation/Foundation.h>
 #import "AdditionQuestion.h"
 #import "InputHandler.h"
+#import "ScoreKeeper.h"
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         BOOL gameOn = YES;
+        ScoreKeeper* scoreTrack = [[ScoreKeeper alloc] init];
+        InputHandler* input = [[InputHandler alloc] init];
+        NSString* answer = [[NSString alloc] init];
+        NSRange checkString;
+        NSInteger convertAnswer;
         
         while (gameOn) {
             AdditionQuestion* question = [[AdditionQuestion alloc] init];
-            InputHandler* input = [[InputHandler alloc] init];
             
             // Output question to User
             NSLog(@"%@",question.question);
@@ -25,24 +30,21 @@ int main(int argc, const char * argv[]) {
             NSLog(@"Enter your answer or type quit: ");
             
             // Get user input
-            NSString* answer = [input input];
+            answer = [input input];
 
-            NSRange checkString = [answer rangeOfString:@"quit" options: NSCaseInsensitiveSearch];
+            // To check if user inputted quit, not case sensitive
+            checkString = [answer rangeOfString:@"quit" options: NSCaseInsensitiveSearch];
             
             // Check if user input "quit" or proper answer
             if (checkString.location == 0) {
                 gameOn = NO;
+                NSLog(@"Correct Answers: %d",scoreTrack.correct);
+                NSLog(@"Wrong Answers: %d",scoreTrack.wrong);
                 continue;
             } else {
                 // Convert NSString answer to NSInteger
-                NSInteger convertAnswer = [answer intValue];
-                
-                // Check if user answer is correct
-                    if (convertAnswer == question.answer) {
-                        NSLog(@"Right!");
-                    } else {
-                        NSLog(@"Wrong!");
-                    }
+                convertAnswer = [answer intValue];
+                [scoreTrack scoreQuestion:question answer:convertAnswer];
                 
             }
 
