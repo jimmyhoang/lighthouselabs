@@ -42,6 +42,7 @@ int main(int argc, const char * argv[]) {
             // convert char to int for switch case
             selection = (int)inputChoice -48;
             
+            // switch case for user option
             switch (selection)
             {
                 case 1:
@@ -60,9 +61,13 @@ int main(int argc, const char * argv[]) {
                 }
                 case 3:
                 {
-                    NSNumber *numbFromString = @([inputString integerValue]);
-                    NSLog(@"%@", numbFromString);
-                    NSLog(@"%p", &numbFromString);
+                    if ([inputString rangeOfCharacterFromSet:[NSCharacterSet letterCharacterSet]].location != NSNotFound) {
+                        NSLog(@"This string contains invalid characters for Numberization!\n");
+                    } else {
+                        NSNumber *numbFromString = @([inputString integerValue]);
+                        NSLog(@"%@", numbFromString);
+                        NSLog(@"%p", &numbFromString);
+                    }
                     break;
                 }
                 case 4:
