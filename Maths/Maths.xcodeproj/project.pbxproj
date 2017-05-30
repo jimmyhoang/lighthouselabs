@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		FF4BC5D21EDDEBE5004A74D7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FF4BC5D11EDDEBE5004A74D7 /* main.m */; };
 		FF4BC5DA1EDDF0F2004A74D7 /* AdditionQuestion.m in Sources */ = {isa = PBXBuildFile; fileRef = FF4BC5D91EDDF0F2004A74D7 /* AdditionQuestion.m */; };
+		FF4BC5DD1EDDFD4E004A74D7 /* InputHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = FF4BC5DC1EDDFD4E004A74D7 /* InputHandler.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -28,6 +29,8 @@
 		FF4BC5D11EDDEBE5004A74D7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		FF4BC5D81EDDF0F2004A74D7 /* AdditionQuestion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdditionQuestion.h; sourceTree = "<group>"; };
 		FF4BC5D91EDDF0F2004A74D7 /* AdditionQuestion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdditionQuestion.m; sourceTree = "<group>"; };
+		FF4BC5DB1EDDFD4E004A74D7 /* InputHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputHandler.h; sourceTree = "<group>"; };
+		FF4BC5DC1EDDFD4E004A74D7 /* InputHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InputHandler.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +64,8 @@
 			isa = PBXGroup;
 			children = (
 				FF4BC5D11EDDEBE5004A74D7 /* main.m */,
+				FF4BC5DB1EDDFD4E004A74D7 /* InputHandler.h */,
+				FF4BC5DC1EDDFD4E004A74D7 /* InputHandler.m */,
 				FF4BC5D81EDDF0F2004A74D7 /* AdditionQuestion.h */,
 				FF4BC5D91EDDF0F2004A74D7 /* AdditionQuestion.m */,
 			);
@@ -125,6 +130,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FF4BC5D21EDDEBE5004A74D7 /* main.m in Sources */,
+				FF4BC5DD1EDDFD4E004A74D7 /* InputHandler.m in Sources */,
 				FF4BC5DA1EDDF0F2004A74D7 /* AdditionQuestion.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
