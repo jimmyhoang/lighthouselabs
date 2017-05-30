@@ -15,7 +15,7 @@ int main(int argc, const char * argv[]) {
         int selection;
         int repeat = 0;
         
-        
+        // ask for user string input and display it back
         printf("Input a string: ");
         fgets(inputChars, 255, stdin);
         printf("Your string is: %s\n", inputChars);
@@ -24,6 +24,7 @@ int main(int argc, const char * argv[]) {
         
         while (repeat == 0) {
             
+            // give user options
             printf("What would you like to do?\n");
             printf("Pick a number between 1-6\n");
             printf("1. Uppercase\n");
@@ -33,10 +34,11 @@ int main(int argc, const char * argv[]) {
             printf("5. Respond\n");
             printf("6. De-Space-It\n");
 
-            fgets(&inputChoice, 3, stdin);
+            // get user option choice
+            fgets(&inputChoice, 10, stdin);
 
-            selection = inputChoice -48;
-            NSLog(@"%d\n", selection);
+            // convert char to int for switch case
+            selection = (int)inputChoice -48;
             
             switch (selection)
             {
