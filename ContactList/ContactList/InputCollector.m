@@ -10,6 +10,15 @@
 
 @implementation InputCollector
 
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        _history = [[NSMutableArray alloc] init];
+    }
+    return self;
+}
+
 -(NSString *)inputForPrompt:(NSString *)promptString {
     NSLog(@"%@",promptString);
     
@@ -26,7 +35,19 @@
     // Remove leading spaces and new line from NSString
     convertAnswer = [convertAnswer stringByTrimmingCharactersInSet:spaces];
     
+    // Only log commands
+    if ([convertAnswer localizedCaseInsensitiveContainsString:@"new"] || [convertAnswer localizedCaseInsensitiveContainsString:@"list"] || [convertAnswer localizedCaseInsensitiveContainsString:@"quit"] || [convertAnswer localizedCaseInsensitiveContainsString:@"show"] || [convertAnswer localizedCaseInsensitiveContainsString:@"find"]) {
+        [self.history addObject:convertAnswer];
+    }
+    
     return convertAnswer;
+}
+
+-(void)displayHistory {
+    NSLog(@"Last 3 commands: ");
+    NSLog(@"%@",[self.history lastObject]);
+    NSLog(@"%@",[self.history objectAtIndex:[self.history count]-2]);
+    NSLog(@"%@",[self.history objectAtIndex:[self.history count]-3]);
 }
 
 @end

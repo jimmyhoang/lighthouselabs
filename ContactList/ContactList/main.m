@@ -35,6 +35,7 @@ int main(int argc, const char * argv[]) {
             NSLog(@"quit - Quit application");
             NSLog(@"show - Show a specific contact");
             NSLog(@"find - Find a contact");
+            NSLog(@"history - Print last 3 commands entered");
             
             // Ask for user input
             userChoice = [input inputForPrompt:@"What would you like to do?"];
@@ -75,6 +76,10 @@ int main(int argc, const char * argv[]) {
                 NSArray* searchArray = [userChoice componentsSeparatedByCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@" "]];
                 NSString* search = [searchArray objectAtIndex:1];
                 [contactList findContact:search];
+                
+            } else if ([userChoice localizedCaseInsensitiveContainsString:@"history"]) {
+                [input displayHistory];
+                NSLog(@"\n");
                 
             } else {
                 NSLog(@"Invalid choice");
