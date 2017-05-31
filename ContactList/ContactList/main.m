@@ -18,36 +18,55 @@ int main(int argc, const char * argv[]) {
         ContactList* contactList = [[ContactList alloc] init];
         NSString* userName = [[NSString alloc] init];
         NSString* userChoice = [[NSString alloc] init];
+        NSString* userID = [[NSString alloc] init];
         BOOL on = YES;
         
         userName = [input inputForPrompt:@"Enter your username:"];
         
         while (on) {
-            // menu
+            // Menu
             NSLog(@"Main Menu");
             NSLog(@"new - Create a new contact");
             NSLog(@"list - List all saved contacts");
             NSLog(@"quit - Quit application");
+            NSLog(@"show - Show a specific contact");
+            NSLog(@"find - Find a contact");
             
+            // Ask for user input
             userChoice = [input inputForPrompt:@"What would you like to do?"];
             
-        
-            if ([userChoice hasPrefix:@"quit"]) {
+            
+            // Determine what user inputted
+            if ([userChoice localizedCaseInsensitiveContainsString:@"quit"]) {
                 on = NO;
                 NSLog(@"See you later");
                 continue;
-            } else if ([userChoice hasPrefix:@"new"]) {
+            } else if ([userChoice localizedCaseInsensitiveContainsString:@"new"]) {
                 Contact* newContact = [[Contact alloc] init];
-                newContact.name = [input inputForPrompt:@"Name: "];
                 newContact.email = [input inputForPrompt:@"Email: "];
-                [contactList addContact:newContact];
+                if (![contactList doesExist:newContact.email]){
+                    newContact.name = [input inputForPrompt:@"Name: "];
+                    [contactList addContact:newContact];
+                } else {
+                    NSLog(@"Duplicate email");
+                }
                 
-            } else if ([userChoice hasPrefix:@"list"]) {
+            } else if ([userChoice localizedCaseInsensitiveContainsString:@"list"]) {
                 [contactList listContacts];
+                
+            } else if ([userChoice localizedCaseInsensitiveContainsString:@"show"]) {
+                userID = [input inputForPrompt:@"Enter the ID"];
+                [contactList showContact:userID];
+            } else if ([userChoice localizedCaseInsensitiveContainsString:@"find"]) {
+                NSArray* searchArray = [userChoice componentsSeparatedByCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@" "]];
+                NSString* search = [searchArray objectAtIndex:1];
+                [contactList findContact:search];
                 
             } else {
                 NSLog(@"Invalid choice");
             }
+            
+            
 
             
             

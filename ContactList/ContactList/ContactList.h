@@ -9,10 +9,14 @@
 #import <Foundation/Foundation.h>
 #import "Contact.h"
 
+
 @interface ContactList : NSObject
 
 @property (nonatomic) NSMutableArray* contactList;
 
 -(void)addContact:(Contact *)newContact;
 -(void)listContacts;
+-(void)showContact:(NSString *) id;
+-(void)findContact:(NSString *) search;
+-(bool)doesExist:(NSString *)email;
 @end
