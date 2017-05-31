@@ -1,13 +1,13 @@
 //
-//  AdditionQuestion.m
+//  DivisionQuestion.m
 //  Maths
 //
 //  Created by Jimmy Hoang on 2017-05-31.
 //  Copyright © 2017 Jimmy Hoang. All rights reserved.
 //
 
-#import "AdditionQuestion.h"
+#import "DivisionQuestion.h"
 
-@implementation AdditionQuestion
+@implementation DivisionQuestion
 
 @end

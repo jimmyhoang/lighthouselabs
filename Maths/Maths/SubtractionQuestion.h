@@ -1,13 +1,13 @@
 //
-//  AdditionQuestion.m
+//  SubtractionQuestion.h
 //  Maths
 //
 //  Created by Jimmy Hoang on 2017-05-31.
 //  Copyright © 2017 Jimmy Hoang. All rights reserved.
 //
 
-#import "AdditionQuestion.h"
+#import "Question.h"
 
-@implementation AdditionQuestion
+@interface SubtractionQuestion : Question
 
 @end
