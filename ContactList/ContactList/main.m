@@ -19,7 +19,11 @@ int main(int argc, const char * argv[]) {
         NSString* userName = [[NSString alloc] init];
         NSString* userChoice = [[NSString alloc] init];
         NSString* userID = [[NSString alloc] init];
+        NSString* label = [[NSString alloc] init];
+        NSString* phoneN = [[NSString alloc] init];
+        NSString* anotherNChoice = [[NSString alloc] init];
         BOOL on = YES;
+        BOOL anotherN = YES;
         
         userName = [input inputForPrompt:@"Enter your username:"];
         
@@ -46,6 +50,16 @@ int main(int argc, const char * argv[]) {
                 newContact.email = [input inputForPrompt:@"Email: "];
                 if (![contactList doesExist:newContact.email]){
                     newContact.name = [input inputForPrompt:@"Name: "];
+                    while(anotherN) {
+                        label = [input inputForPrompt:@"Phone Label: "];
+                        phoneN = [input inputForPrompt:@"Phone Number: "];
+                        [newContact.phone setObject:phoneN forKey:label];
+                        anotherNChoice = [input inputForPrompt:@"Would you like to add another number? (y/n)"];
+                        
+                        if ([anotherNChoice localizedCaseInsensitiveContainsString:@"n"]) {
+                            anotherN = NO;
+                        }
+                    }
                     [contactList addContact:newContact];
                 } else {
                     NSLog(@"Duplicate email");

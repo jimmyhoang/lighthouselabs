@@ -12,5 +12,9 @@
 
 @property (nonatomic) NSString* name;
 @property (nonatomic) NSString* email;
+@property (nonatomic) NSString* phoneNumber;
+@property (nonatomic) NSString* phoneLabel;
+@property (nonatomic) NSMutableDictionary* phone;
+
 
 @end

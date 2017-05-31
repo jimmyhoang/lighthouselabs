@@ -35,9 +35,13 @@
     if (i < [self.contactList count] ) {
         NSString* name = [self.contactList[i] valueForKey:@"name"];
         NSString* email = [self.contactList[i] valueForKey:@"email"];
-    
+        NSDictionary* phone = [self.contactList[i] valueForKey:@"phone"];
+
         NSLog(@"Name: %@", name);
         NSLog(@"Email: %@", email);
+        for (NSString *label in phone) {
+            NSLog(@"%@ - %@",label,[phone objectForKey:label]);
+        }
     } else {
         NSLog(@"Contact not found");
     }
@@ -63,6 +67,7 @@
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"self.email contains[cd] %@", email];
     NSArray *findEmail = [self.contactList filteredArrayUsingPredicate:predicate];
     
+    // Check if array exists
     if (!findEmail || [findEmail count]) {
         return TRUE;
     } else {
