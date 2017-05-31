@@ -7,7 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Question.h"
 
 @interface QuestionFactory : NSObject
+
+@property (nonatomic, strong) NSArray* questionSubclassNames;
+
+-(Question*) generateRandomQuestion;
 
 @end

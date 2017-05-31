@@ -10,4 +10,21 @@
 
 @implementation QuestionFactory
 
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        _questionSubclassNames = @[@"AdditionQuestion", @"SubtractionQuestion", @"MultiplyQuestion", @"DivisionQuestion"];
+
+    }
+    return self;
+}
+
+-(Question *)generateRandomQuestion {
+    int random = arc4random() % 4;
+    NSString* className = [_questionSubclassNames objectAtIndex:random];
+    Question* randomQuestion = [[NSClassFromString(className) alloc] init];
+    return randomQuestion;
+}
+
 @end

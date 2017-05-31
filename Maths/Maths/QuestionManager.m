@@ -21,7 +21,7 @@
     return self;
 }
 
--(void)addQuestion:(AdditionQuestion*)question {
+-(void)addQuestion:(Question*)question {
     [self.questions addObject:question];
 }
 

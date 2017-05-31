@@ -7,10 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "AdditionQuestion.h"
+#import "Question.h"
 #import "InputHandler.h"
 #import "ScoreKeeper.h"
 #import "QuestionManager.h"
+#import "QuestionFactory.h"
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
@@ -18,16 +19,17 @@ int main(int argc, const char * argv[]) {
         ScoreKeeper* scoreTrack = [[ScoreKeeper alloc] init];
         InputHandler* input = [[InputHandler alloc] init];
         QuestionManager* questions = [[QuestionManager alloc] init];
+        QuestionFactory* qFactory = [[QuestionFactory alloc] init];
         NSString* answer = [[NSString alloc] init];
         NSRange checkString;
         NSInteger convertAnswer;
         
         
         while (gameOn) {
-            AdditionQuestion* question = [[AdditionQuestion alloc] init];
+            Question* question = [qFactory generateRandomQuestion];
             [questions addQuestion:question];
             
-            // Output question to User
+            // Output question
             NSLog(@"%@",question.question);
             
             // Prompt user for answer

@@ -10,4 +10,18 @@
 
 @implementation MultiplyQuestion
 
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        [self generateQuestion];
+    }
+    return self;
+}
+
+-(void)generateQuestion {
+    super.question = [NSString stringWithFormat:@"%ld x %ld = ?",super.leftValue, super.rightValue];
+    super.answer = super.leftValue * super.rightValue;
+}
+
 @end

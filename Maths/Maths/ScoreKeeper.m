@@ -10,7 +10,7 @@
 
 @implementation ScoreKeeper
 
--(void)scoreQuestion:(AdditionQuestion*) question answer:(NSInteger) answer {
+-(void)scoreQuestion:(Question*) question answer:(NSInteger) answer {
    
     // Check if user answer is correct
     if (answer == question.answer) {

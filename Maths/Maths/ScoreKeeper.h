@@ -7,12 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "AdditionQuestion.h"
+#import "Question.h"
 
 @interface ScoreKeeper : NSObject
 
 @property (nonatomic) int correct;
 @property (nonatomic) int wrong;
 
--(void)scoreQuestion:(AdditionQuestion*) question answer:(NSInteger) answer;
+-(void)scoreQuestion:(Question*) question answer:(NSInteger) answer;
 @end
