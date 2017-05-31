@@ -10,18 +10,22 @@
 #import "AdditionQuestion.h"
 #import "InputHandler.h"
 #import "ScoreKeeper.h"
+#import "QuestionManager.h"
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         BOOL gameOn = YES;
         ScoreKeeper* scoreTrack = [[ScoreKeeper alloc] init];
         InputHandler* input = [[InputHandler alloc] init];
+        QuestionManager* questions = [[QuestionManager alloc] init];
         NSString* answer = [[NSString alloc] init];
         NSRange checkString;
         NSInteger convertAnswer;
         
+        
         while (gameOn) {
             AdditionQuestion* question = [[AdditionQuestion alloc] init];
+            [questions addQuestion:question];
             
             // Output question to User
             NSLog(@"%@",question.question);
@@ -45,6 +49,7 @@ int main(int argc, const char * argv[]) {
                 // Convert NSString answer to NSInteger
                 convertAnswer = [answer intValue];
                 [scoreTrack scoreQuestion:question answer:convertAnswer];
+                NSLog(@"%@",[questions timeOutput:[question answerTime]]);
                 
             }
 

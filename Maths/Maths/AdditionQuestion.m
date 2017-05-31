@@ -17,8 +17,19 @@
         
         _question = [NSString stringWithFormat:@"%d + %d = ?",num1, num2];
         _answer = num1 + num2;
+        _startTime = [NSDate date];
     }
     return self;
 }
 
+-(NSInteger)answer {
+    _endTime = [NSDate date];
+    return _answer;
+}
+
+-(NSTimeInterval)answerTime {
+    double answerTime = [self.endTime timeIntervalSinceDate:self.startTime];
+    NSLog(@"Answer time: %@", [NSString stringWithFormat:@"%.2g",answerTime]);
+    return answerTime;
+}
 @end

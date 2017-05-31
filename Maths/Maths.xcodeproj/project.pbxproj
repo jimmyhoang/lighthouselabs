@@ -11,6 +11,7 @@
 		FF4BC5DA1EDDF0F2004A74D7 /* AdditionQuestion.m in Sources */ = {isa = PBXBuildFile; fileRef = FF4BC5D91EDDF0F2004A74D7 /* AdditionQuestion.m */; };
 		FF4BC5DD1EDDFD4E004A74D7 /* InputHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = FF4BC5DC1EDDFD4E004A74D7 /* InputHandler.m */; };
 		FF4BC5E01EDE002B004A74D7 /* ScoreKeeper.m in Sources */ = {isa = PBXBuildFile; fileRef = FF4BC5DF1EDE002B004A74D7 /* ScoreKeeper.m */; };
+		FF4BC5FF1EDF350E004A74D7 /* QuestionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FF4BC5FE1EDF350E004A74D7 /* QuestionManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -34,6 +35,8 @@
 		FF4BC5DC1EDDFD4E004A74D7 /* InputHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InputHandler.m; sourceTree = "<group>"; };
 		FF4BC5DE1EDE002B004A74D7 /* ScoreKeeper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScoreKeeper.h; sourceTree = "<group>"; };
 		FF4BC5DF1EDE002B004A74D7 /* ScoreKeeper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScoreKeeper.m; sourceTree = "<group>"; };
+		FF4BC5FD1EDF350E004A74D7 /* QuestionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionManager.h; sourceTree = "<group>"; };
+		FF4BC5FE1EDF350E004A74D7 /* QuestionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +70,8 @@
 			isa = PBXGroup;
 			children = (
 				FF4BC5D11EDDEBE5004A74D7 /* main.m */,
+				FF4BC5FD1EDF350E004A74D7 /* QuestionManager.h */,
+				FF4BC5FE1EDF350E004A74D7 /* QuestionManager.m */,
 				FF4BC5DE1EDE002B004A74D7 /* ScoreKeeper.h */,
 				FF4BC5DF1EDE002B004A74D7 /* ScoreKeeper.m */,
 				FF4BC5DB1EDDFD4E004A74D7 /* InputHandler.h */,
@@ -134,6 +139,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF4BC5FF1EDF350E004A74D7 /* QuestionManager.m in Sources */,
 				FF4BC5E01EDE002B004A74D7 /* ScoreKeeper.m in Sources */,
 				FF4BC5D21EDDEBE5004A74D7 /* main.m in Sources */,
 				FF4BC5DD1EDDFD4E004A74D7 /* InputHandler.m in Sources */,
@@ -264,6 +270,7 @@
 				FF4BC5D71EDDEBE5004A74D7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
